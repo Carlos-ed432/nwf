@@ -1,4 +1,4 @@
-#Meus estudos de python
+Meus estudos de python
 
  Iniciei meus estudos de python a quase 1 mês e já consegui aprender:
 
