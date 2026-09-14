@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+*{margin: 0;
+padding: 0;
+font-family: "Arimo", sans-serif;
+box-sizing: border-box;}
+.back{background-image: url("../telalogin/img/odcback.jpg");display: flex;justify-content: center;align-items: center;min-height: 100vh;background-size: cover;background-position:center ;}
+.conteiner{width: 420px;background-color: transparent;
+border: 2px solid rgba(255, 255, 255, .2);border-radius: 15px;color: black;padding: 30px 40px;box-shadow: 0 0 10px rgba(0,0,0,.2) ;}
+
+.conteiner h1{
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.boxinput{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.boxinput input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid  rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    outline: none;
+    font: 16px;
+    color: black;
+padding: 20px 45px 20px 20px;}
+
+.boxinput input::placeholder{color:gray;text-align:left;}
+
+.boxinput i{position: absolute;
+right: 20px;
+font-size: 20px;top: 25%;}
+
+.lembrarsenha{
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 15px;
+}
+.lembrarsenha label input{accent-color:#fff ;
+margin-right: 5px;}
+.lembrarsenha a{text-decoration: none;
+color: #fff;}
+
+.lembrarsenha a:hover{text-decoration: underline;}
+
+.loginn{width: 100%;
+height: 50px;
+background-color: #fff;
+border: none;
+border-radius: 40px;
+cursor: pointer;
+font-size: 16px;
+color: #333;
+font-weight: 600;
+box-shadow: 0 0 10px rgba(0,0,0,.1);}
+.loginn:hover{background-color: transparent;
+    border: 2px solid  rgba(255, 255, 255, .2);
+
+}
+
+.notregister{font-size: 14px ;text-align: center;
+margin: 20px 0 15px;}
