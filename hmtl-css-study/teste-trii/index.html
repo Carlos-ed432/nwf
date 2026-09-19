@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+    rel='stylesheet'> 
+
+
+</head>
+<body>
+    <main class="container">
+        <form>
+        <h1>Peça seu orçamento agora mesmo!<h1>
+
+            <div class="group-cards">
+                <div class="input-name">
+                    <input placeholder=" " type="text" id="inputname">
+                    <label for="inputname">Nome</label>
+                </div>
+
+                <div class="input-email">       <input
+                    placeholder=" " type="email" id="inputemail">
+                    <label for="input-email">E-mail</label>
+                </div>
+
+                <div class="input-tel">         <input placeholder=" " type="tel" id="inputtel">
+                    <label for="input-tel">Telefone</label>
+                </div>
+
+
+                <select name="" id="menu">
+                <option   disabled selected hidden>Escolha o serviço que deseja</option>
+                <option  >Criação de Site</option>
+                <option  >Tráfego Pago (Anúncios)</option>
+                <option  >Gestão de Redes Sociais</option>
+                </select>
+            </div>
+        
+            <textarea placeholder="Mensagem" id="msg"></textarea>
+            <div id="mensagem-sucesso">Enviado !</div>
+            <div class="botao-container">
+                <button type="submit">Enviar </button>
+            </div>
+
+
+    </form>
+
+</main>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
