@@ -13,15 +13,13 @@ def criarq(nome):
 def opções():
     return Panel("1 - [bold blue]Ver livros[/]\n2 - [bold blue]Adicionar novo livro[/]\n3 -[bold blue] Pesquisar livro[/]\n4 - [bold blue]Remover livro[/]\n5 - [bold blue]Sair[/]\n",width=30,title="[white] Selecione uma opção[/]",border_style="bold blue")
 def loadjson(caminhodoarq):
-    with open(caminhodoarq,'r',encoding='utf8') as arquivo:
-        return json.load(arquivo)
-
+            with open(caminhodoarq,'r',encoding='utf8') as arquivo:
+                return json.load(arquivo)
 cont = True
 #criarq("livros.json")
 while True:
     print(opções())
     arquivo = r"/home/carlos/programação/vs code/hmtl-css-study/Exercícios/manipulandojson/livros.json"
-    data =loadjson(arquivo)
     print('')
     try:
         opç = int(input("Sua opção: "))
@@ -29,9 +27,13 @@ while True:
         print("[bold red]Selecione uma opção válida[/]")
     else:
         if opç==1:
-            for livr in data["Livros Clássicos"]:
-                print(Panel(f"Nome do livro: {livr["Livro"]}\nData de lançamento: {livr["Lançamento"]}\nAutor: {livr["Autor"]}",width=30,border_style="green"))
-            print(' ============================')
+            try:
+                dataa=loadjson(arquivo)
+                for livr in dataa["Livros clássicos"]:
+                    print(Panel(f"Nome do livro: {livr["Livro"]}\nData de lançamento: {livr["Lançamento"]}\nAutor: {livr["Autor"]}",width=30,border_style="green"))
+                print(' ============================')
+            except json.decoder.JSONDecodeError:
+                print("[bold red] Biblioteca vazia![/]")
 
         elif opç==2:
             livro = input("Nome do livro: ")
@@ -39,26 +41,26 @@ while True:
             Autor = input("Autor do livro: ")
             dadoslivro = {"Livro":livro,"Lançamento":lançamento,"Autor":Autor}
             try:
-                with open(arquivo,'r',encoding='utf-8') as livr:
-                    dadosjson = json.load(livr)
+                with open(arquivo,'r',encoding='utf-8') as tst:
+                    dadosjson = json.load(tst)
             except:
-                dadosjson = {"Livros Clássicos":[]}
-            with open(arquivo,'r',encoding='utf-8') as livross:
-                livross = json.load(livross)
-                livroexist = False
-                for liv in livross["Livros Clássicos"]:
-                    if livro.strip().casefold() == liv["Livro"].strip().casefold():
-                        livroexist = True
-                        print("[bold red]O livro já existe na lista[/]")
-                if livroexist == False:
-                    dadosjson["Livros Clássicos"].append(dadoslivro)
-                    with open(arquivo,'w',encoding='utf-8') as arqlivr:
-                        json.dump(dadosjson,arqlivr,indent=4,ensure_ascii=False)
-                        print("[bold green]Livro adicionado com sucesso[/]")
+                dadosjson = {"Livros clássicos":[]}
+
+            livrosss = loadjson(arquivo)
+            livroexist = False
+            for liv in livrosss["Livros clássicos"]:
+                if livro.strip().casefold() == liv["Livro"].strip().casefold():
+                    livroexist = True
+                    print("[bold red]O livro já existe na lista[/]")
+            if livroexist == False:
+                dadosjson["Livros clássicos"].append(dadoslivro)
+                with open(arquivo,'w',encoding='utf-8') as arqlivr:
+                    json.dump(dadosjson,arqlivr,indent=4,ensure_ascii=False)
+                    print("[bold green]Livro adicionado com sucesso[/]")
         elif opç==3:
             search = input("Digite o nome do livro que quer encontrar: ")
             dadoslivr = loadjson(arquivo)
-            for i in dadoslivr["Livros Clássicos"]:
+            for i in dadoslivr["Livros clássicos"]:
                 if search.strip().casefold() == i["Livro"].strip().casefold():
                     print(Panel(f"Nome do livro: {i["Livro"]}\nLançamento: {i["Lançamento"]}\nAutor: {i["Autor"]}",width=30,border_style="green"))
                     break
@@ -66,24 +68,32 @@ while True:
                 print("[bold red]Livro não encontrado[/]")
         
         elif opç==4:
+            encontrado = False
             livrodel = input("Digite o nome do livro que deseja remover: ")
-            while cont:
-                crtz = input(f"Tem certeza que deseja remover o livro {livrodel} ? press [S/N]").strip().upper()
-                if crtz not in ["S","N"]:
-                    print("[bold red]Digite uma opção válida.[/]")
-                    cont=True
-                else:
-                    cont=False
             dadosdel = loadjson(arquivo)
-            for livrr in dadosdel["Livros Clássicos"]:
-                if livrodel.strip().casefold()==livrr["Livro"].strip().casefold():
-                    dadosdel["Livros Clássicos"].remove(livrr)
-                    print("[bold green]Livro removido com sucesso![/]")
-                    break
-            else:
+            for livrr in dadosdel["Livros clássicos"]:                
+                if livrodel.strip().casefold() == livrr["Livro"].strip().casefold():
+                    encontrado=True
+                    while cont:
+                        crtz = input(f"Tem certeza que deseja remover o livro {livrodel} ? press [S/N]").strip().upper()
+                        if crtz =='S':
+                            dadosdel["Livros clássicos"].remove(livrr)
+                            with open(arquivo,'w',encoding='utf-8') as ffinaly:
+                                json.dump(dadosdel,ffinaly,indent=4,ensure_ascii=False)
+                                print("[bold green]Livro removido com sucesso![/]")
+                                cont=False
+                        elif crtz=='N':
+                            print("[bold blue]Remoção cancelada.")
+                            cont=False
+                        else:
+                            print("[bold red]Digite uma opção válida.[/]")
+                            cont=True
+            if not encontrado:
                 print("[bold red]Livro não encontrado![/]")
-            with open(arquivo,'w',encoding='utf-8') as ffinaly:
-                json.dump(dadosdel,ffinaly,indent=4,ensure_ascii=False)
+
+        elif opç==5:
+            print("[bold green]Volte sempre![/]")
+            break
         else:
             print("[bold red]Selecione uma opção válida[/]")
 

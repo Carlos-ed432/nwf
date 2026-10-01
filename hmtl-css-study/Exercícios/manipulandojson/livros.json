@@ -1,14 +1,24 @@
 {
-    "Livros Clássicos": [
+    "Livros clássicos": [
         {
-            "Livro": "De quanta terra precisa o homem",
-            "Lançamento": "1886",
-            "Autor": "Liev Tolstói"
+            "Livro": "A metamorfose",
+            "Lançamento": "1915",
+            "Autor": "franz kafka"
         },
         {
-            "Livro": "A Metamorfose",
-            "Lançamento": "1912",
-            "Autor": "novela"
+            "Livro": "O processo",
+            "Lançamento": "1925",
+            "Autor": "franz kafka"
+        },
+        {
+            "Livro": "Além do bem e do mal",
+            "Lançamento": "1886",
+            "Autor": "Friedrich Nietzsche"
+        },
+        {
+            "Livro": "Meditações",
+            "Lançamento": "170 d.c",
+            "Autor": "Marco Aurélio"
         }
     ]
 }
