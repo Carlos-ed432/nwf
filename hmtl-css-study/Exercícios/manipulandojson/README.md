@@ -21,11 +21,11 @@ O projeto simula um pequeno gerenciador de livros clássicos, permitindo cadastr
 - 🛡️ Tratar entradas inválidas no menu
 - 🎨 Utilizar `Rich` para melhorar a interface do terminal
 
-## 🗂️ Estrutura dos dados
+## 🗂️ Estrutura dos Dados
 
 Os dados são armazenados em um arquivo `livros.json`.
 
-Exemplo:
+Exemplo de estrutura:
 
 ```json
 {
@@ -46,32 +46,24 @@ Exemplo:
 
 Essa estrutura também foi utilizada como exercício para praticar **listas e dicionários aninhados**.
 
-## 🧠 Conceitos praticados
+## 🧠 Conceitos Praticados
 
 Durante o desenvolvimento, pratiquei:
 
 - Variáveis e tipos de dados
 - `if`, `else` e estruturas de decisão
-- `while`
-- `for`
-- `try/except`
-- Funções
-- `return`
-- Listas
-- Dicionários
+- `while` e `for` (estruturas de repetição)
+- `try/except` (tratamento de exceções)
+- Funções e retorno (`return`)
+- Listas e Dicionários
 - Métodos de listas, como `append()` e `remove()`
 - Métodos de strings, como `strip()` e `casefold()`
-- Leitura de arquivos
-- Escrita de arquivos
-- Manipulação de JSON
-- `json.load()`
-- `json.dump()`
-- Validação de dados
-- Tratamento de entradas inválidas
+- Leitura e escrita de arquivos (`json.load()` e `json.dump()`)
+- Validação de dados e tratamento de entradas inválidas
 - Organização e reutilização de código
-- Biblioteca `Rich`
+- Manipulação da biblioteca `Rich`
 
-## 🔄 Fluxo dos dados
+## 🔄 Fluxo dos Dados
 
 O funcionamento básico do projeto segue este fluxo:
 
@@ -89,7 +81,7 @@ json.dump()
 livros.json atualizado
 ```
 
-Também criei uma função para reutilizar a leitura do JSON:
+Também criei uma função para reutilizar a leitura do JSON, evitando repetir a mesma lógica sempre que preciso carregar os dados:
 
 ```python
 def loadjson(caminhodoarq):
@@ -97,13 +89,9 @@ def loadjson(caminhodoarq):
         return json.load(arquivo)
 ```
 
-Isso evita repetir a mesma lógica sempre que preciso carregar os dados.
+## 🔎 Validação de Livros Duplicados
 
-## 🔎 Validação de livros duplicados
-
-Antes de adicionar um livro, o programa verifica se ele já existe.
-
-Para tornar a comparação mais flexível, utilizo `strip()` e `casefold()`:
+Antes de adicionar um livro, o programa verifica se ele já existe. Para tornar a comparação mais flexível, utilizo `strip()` e `casefold()`:
 
 ```python
 if livro.strip().casefold() == liv["Livro"].strip().casefold():
@@ -114,12 +102,7 @@ Assim, diferenças de maiúsculas, minúsculas e espaços nas extremidades não 
 
 ## 🎨 Interface com Rich
 
-O projeto utiliza a biblioteca `Rich` para melhorar a visualização das informações no terminal, utilizando elementos como:
-
-- `Panel`
-- Cores
-- Formatação de texto
-- Mensagens de sucesso e erro
+O projeto utiliza a biblioteca `Rich` para melhorar a visualização das informações no terminal, utilizando elementos como `Panel`, cores, formatação de texto e mensagens customizadas de sucesso e erro.
 
 Exemplo de estrutura do menu:
 
@@ -135,37 +118,34 @@ Exemplo de estrutura do menu:
 └──────────────────────────┘
 ```
 
-## 🛠️ Tecnologias utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - **Python**
 - **JSON**
-- **Rich**
+- **Rich** (Biblioteca CLI)
 - **VS Code**
 
-## 📌 Status do projeto
+## 📌 Status do Projeto
 
 🚧 **Em desenvolvimento**
 
-Este projeto faz parte dos meus estudos de Python e está sendo evoluído aos poucos conforme novos conceitos são aprendidos.
+Este projeto faz parte dos meus estudos de Python e está sendo evoluído aos poucos conforme novos conceitos são aprendidos. A ideia não é apenas adicionar funcionalidades, mas utilizar o projeto para praticar conceitos, testar possibilidades, encontrar erros e entender como cada parte do código funciona.
 
-A ideia não é apenas adicionar funcionalidades, mas utilizar o projeto para praticar conceitos, testar possibilidades, encontrar erros e entender como cada parte do código funciona.
-
-## 📚 Próximos passos
+## 📚 Próximos Passos
 
 Algumas possibilidades para continuar evoluindo o projeto:
 
-- Melhorar a organização do código
-- Criar funções específicas para cada operação
-- Melhorar o tratamento de erros
-- Aprimorar a interface com Rich
-- Adicionar edição de livros
-- Melhorar a pesquisa
-- Organizar o código em módulos
-- Continuar praticando persistência de dados
+- [ ] Melhorar a organização do código criando funções específicas para cada operação
+- [ ] Melhorar o tratamento de erros e exceções
+- [ ] Aprimorar a interface visual com mais recursos do Rich
+- [ ] Adicionar funcionalidade de edição de livros
+- [ ] Otimizar o sistema de pesquisa
+- [ ] Organizar o código em múltiplos módulos (`.py`)
+- [ ] Continuar praticando persistência de dados
 
 ---
 
-### 👨‍💻 Projeto de estudo
-
+### 👨‍💻 Projeto de Estudo
 Desenvolvido como parte dos meus estudos de **Python e Análise e Desenvolvimento de Sistemas**.
 
+> *Aprender fazendo, testar, errar, entender e melhorar.*
