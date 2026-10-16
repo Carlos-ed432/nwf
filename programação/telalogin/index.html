@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginfw</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+rel='stylesheet'> <!--link com os icon/biblioteca-->
+<link rel="stylesheet" href="telalogin.css">
+
+</head>
+<body class="back">
+
+
+    <!--placeholder=textinho que fica dentro das células do input-->
+    <!--type significa o tipo de dados que a entrada vai receber. ex: password, ele vem com * para proteger a senha-->
+    <!--bx bxs, chamamos a biblioteca-->
+    <main class="conteiner">
+        <form>
+            <h1>Login dev</h1>
+            <div class="boxinput">
+                <input placeholder="Usuário" type="email">
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="boxinput">
+                <input placeholder="Senha" type="password" >
+                <i class="bx bxs-lock-alt"></i>               
+            </div>
+            <div class="lembrarsenha">
+                <label for="#">
+                <input type="checkbox">
+                Lembrar senha
+                <a href="">Esqueci minha senha</a>
+            </label>
+            </div>
+            <button class="loginn" type="submit">Login</button>
+            <div class="notregister">
+                <p>Não tem uma conta? <a href="#">cadastre-se
+                </a></p>
+            </div>
+        </form>
+    </main>
+    <script src="telalogin.js"></script>
+</body>
+</html>
