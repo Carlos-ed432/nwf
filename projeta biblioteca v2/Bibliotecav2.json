@@ -1,0 +1,92 @@
+{
+    "Livros": [
+        {
+            "Livro": "A metamorfose",
+            "Lancamento": "1915",
+            "Autor": "Franz Kafka",
+            "Disponivel": false,
+            "Emprestimo": {
+                "Leitor": "edu",
+                "Data": "2026-10-16",
+                "Validade": "2026-11-15"
+            }
+        },
+        {
+            "Livro": "Jurassic Park",
+            "Lancamento": "1994",
+            "Autor": "Michael",
+            "Disponivel": false,
+            "Emprestimo": {
+                "Leitor": "carlos henrique",
+                "Data": "2026-10-06",
+                "Validade": "2026-11-05"
+            }
+        },
+        {
+            "Livro": "De quanta terra precisa o homem",
+            "Lancamento": "2021",
+            "Autor": "Liev Tolstói",
+            "Disponivel": false,
+            "Emprestimo": {
+                "Leitor": "eduardo",
+                "Data": "2026-10-06",
+                "Validade": "2026-11-05"
+            }
+        },
+        {
+            "Livro": "Noites brancas",
+            "Lancamento": "1848",
+            "Autor": "Dostoiévski",
+            "Disponivel": true,
+            "Emprestimo": {
+                "Leitor": null,
+                "Data": null,
+                "Validade": null
+            }
+        },
+        {
+            "Livro": "O poder do hábito",
+            "Lancamento": "2012",
+            "Autor": "Charles Duhigg",
+            "Disponivel": true,
+            "Emprestimo": {
+                "Leitor": null,
+                "Data": null,
+                "Validade": null
+            }
+        },
+        {
+            "Livro": "A morte de ivan ilitch",
+            "Lancamento": "1886",
+            "Autor": "Franz Kafka",
+            "Disponivel": false,
+            "Emprestimo": {
+                "Leitor": "maya",
+                "Data": "2026-10-06",
+                "Validade": "2026-11-05"
+            }
+        },
+        {
+            "Livro": "Humilhados e ofendidos",
+            "Lancamento": "1861",
+            "Autor": "Dostoiévski",
+            "Disponivel": true,
+            "Emprestimo": {
+                "Leitor": null,
+                "Data": null,
+                "Validade": null
+            }
+        },
+        {
+            "Livro": "O Príncipe ",
+            "Lancamento": "1532",
+            "Autor": "Nicolau Maquiavel",
+            "Disponivel": true,
+            "Emprestimo": {
+                "Leitor": null,
+                "Data": null,
+                "Validade": null
+            }
+        }
+    ]
+}
