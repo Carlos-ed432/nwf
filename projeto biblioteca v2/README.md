@@ -78,4 +78,6 @@ leitor = emprestimo.get("Leitor", "Não informado") if emprestimo else "Não inf
 
 
 ---
-Desenvolvido com 💻 e ☕ por **Carlos Eduardo**. Conecte-se comigo no [LinkedIn](www.linkedin.com/in/carlos-eduardo-9712683a3).
+Desenvolvido com 💻 e ☕ por **Carlos Eduardo**. Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/carlos-eduardo-9712683a3/?isSelfProfile=true)
+
+
