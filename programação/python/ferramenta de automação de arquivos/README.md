@@ -1,16 +1,10 @@
 # 📁 Organizador Automático de Arquivos (Python)
 
----
+![Python Version](https://shields.io)
+![License: MIT](https://shields.io)
+![OS Compatibility](https://shields.io)
 
-<div align="center">
-  <img src="https://shields.io" alt="Python Version">
-  <img src="https://shields.io" alt="License: MIT">
-  <img src="https://shields.io" alt="OS Compatibility">
-</div>
-
-<p align="center">
-  Uma automação robusta desenvolvida para <strong>dar fim à bagunça em pastas do sistema operacional</strong> (como as pastas de <em>Downloads</em> ou <em>Imagens</em>). O script categoriza e move arquivos automaticamente para pastas específicas com base em suas extensões, tratando subdiretórios com segurança e rodando em um loop contínuo interativo.
-</p>
+Uma automação robusta desenvolvida para **dar fim à bagunça em pastas do sistema operacional** (como as pastas de *Downloads* ou *Imagens*). O script categoriza e move arquivos automaticamente para pastas específicas com base em suas extensões, tratando subdiretórios com segurança e rodando em um loop contínuo interativo.
 
 > 🧠 **Propósito do Projeto:** Este projeto foi construído do zero com o objetivo de consolidar conceitos práticos de manipulação do Sistema Operacional (OS), tratamento de fluxos sequenciais e controle de loops de repetição.
 
@@ -95,6 +89,4 @@ for item in arquivos:
 
 ---
 
-<p align="center">
-  Desenvolvido com 💻 e muita persistência por <strong>Carlos Eduardo</strong>
-</p>
+Desenvolvido com 💻 e muita persistência por **Carlos Eduardo**
