@@ -1,20 +1,29 @@
 # 📁 Organizador Automático de Arquivos (Python)
 
-[![Python Version](https://shields.io)](https://python.org)
-[![License: MIT](https://shields.io)](https://opensource.org)
+---
 
-Uma automação em Python desenvolvida para **dar fim à bagunça em pastas do sistema operacional** (como a pasta de *Downloads* ou *Imagens*). O script categoriza e move arquivos automaticamente para pastas específicas com base em suas extensões, tratando subdiretórios com segurança e rodando em um loop contínuo interativo.
+<div align="center">
+  <img src="https://shields.io" alt="Python Version">
+  <img src="https://shields.io" alt="License: MIT">
+  <img src="https://shields.io" alt="OS Compatibility">
+</div>
 
-Este projeto foi construído do zero com o objetivo de consolidar conceitos práticos de manipulação do Sistema Operacional (OS), tratamento de fluxos sequenciais e controle de loops de repetição.
+<p align="center">
+  Uma automação robusta desenvolvida para <strong>dar fim à bagunça em pastas do sistema operacional</strong> (como as pastas de <em>Downloads</em> ou <em>Imagens</em>). O script categoriza e move arquivos automaticamente para pastas específicas com base em suas extensões, tratando subdiretórios com segurança e rodando em um loop contínuo interativo.
+</p>
+
+> 🧠 **Propósito do Projeto:** Este projeto foi construído do zero com o objetivo de consolidar conceitos práticos de manipulação do Sistema Operacional (OS), tratamento de fluxos sequenciais e controle de loops de repetição.
 
 ---
 
 ## ✨ Funcionalidades Práticas
 
-- **Filtro Multi-Extensão Inteligente:** Permite mapear e validar múltiplos formatos de arquivos ao mesmo tempo (ex: `.pdf`, `.deb`, `.webp`, etc.) utilizando buscas performáticas em listas.
-- **Estrutura de Caminhos Dinâmica:** Cria e gerencia os diretórios de destino de forma automática sem sobrescrever arquivos existentes ou gerar exceções redundantes (`exist_ok=True`).
-- **Blindagem Contra Subpastas:** O script possui um "olho clínico" que identifica subdiretórios no meio do caminho, ignorando-os (`continue`) para focar exclusivamente na manipulação de arquivos reais.
-- **Interface de Repetição Interativa:** Utiliza uma estrutura de controle contínuo que permite ao usuário organizar múltiplas pastas em sequência sem precisar reiniciar o programa manualmente.
+| Recurso | Descrição |
+| :--- | :--- |
+| **Filtro Inteligente** | Permite mapear e validar múltiplos formatos de arquivos ao mesmo tempo utilizando buscas performáticas em listas. |
+| **Caminhos Dinâmicos** | Cria e gerencia os diretórios de destino de forma automática sem sobrescrever arquivos existentes ou gerar exceções redundantes (`exist_ok=True`). |
+| **Blindagem Contra Subpastas** | Identifica subdiretórios no meio do caminho, ignorando-os (`continue`) para focar exclusivamente na manipulação de arquivos reais. |
+| **Menu Interativo** | Estrutura de controle contínuo que permite ao usuário organizar múltiplas pastas em sequência sem precisar reiniciar o programa manualmente. |
 
 ---
 
@@ -22,34 +31,45 @@ Este projeto foi construído do zero com o objetivo de consolidar conceitos prá
 
 O desenvolvimento deste script envolveu a aplicação direta de conceitos consolidados do ecossistema Python:
 
-- **Biblioteca `os`:** Utilizada para mapeamento estrutural de diretórios (`os.listdir`), concatenação inteligente de caminhos de arquivos (`os.path.join`) e isolamento preciso de extensões (`os.path.splitext`).
-- **Biblioteca `shutil`:** Aplicada na manipulação física dos arquivos do sistema de arquivos de origem para o destino.
-- **Tratamento de Exceções (`try-except`):** Fluxos de segurança para garantir a execução do código mesmo diante de arquivos protegidos ou sem permissão de escrita.
-- **Laços Finitos vs. Loops Infinitos:** Uso combinado de `for` (garantindo leituras estáticas e seguras da pasta) e `while True` (para a persistência interativa do menu com o usuário).
+*   **Biblioteca `os`:** Utilizada para mapeamento estrutural de diretórios (`os.listdir`), concatenação inteligente de caminhos de arquivos (`os.path.join`) e isolamento preciso de extensões (`os.path.splitext`).
+*   **Biblioteca `shutil`:** Aplicada na manipulação física e movimentação segura dos arquivos do sistema de origem para o destino.
+*   **Tratamento de Exceções (`try-except`):** Criação de fluxos de segurança para garantir a execução contínua do código mesmo diante de arquivos protegidos ou sem permissão de escrita.
+*   **Controle de Fluxo Complexo:** Uso combinado de laços finitos (`for` para varredura estática da pasta) e laços infinitos (`while True` para a persistência do menu interativo).
 
 ---
 
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
-Ter o **Python 3.10 ou superior** instalado na máquina.
 
-### Execução
-1. Clone este repositório para sua máquina local:
+*   **Ambiente:** Python 3.10 ou superior instalado na máquina.
+*   **SO:** Compatível com ambientes Linux, Windows e macOS.
+
+### Passo a Passo
+
+1. **Clone este repositório para sua máquina local:**
    ```bash
    git clone https://github.com
    ```
-2. Abra o terminal na pasta do projeto e execute o script:
+
+2. **Navegue até o diretório do projeto:**
+   ```bash
+   cd nwf
+   ```
+
+3. **Execute o script principal:**
    ```bash
    python osandshutil.py
    ```
-3. Digite o endereço do diretório que deseja limpar (ex: `/home/usuario/Downloads`), dê o nome da pasta de destino e assista à mágica acontecer!
+
+4. **Utilize a ferramenta:**
+   Insira o endereço do diretório que deseja limpar (ex: `/home/usuario/Downloads`), informe o nome da pasta de destino e assista à organização acontecer em tempo real!
 
 ---
 
-## 🧠 Demonstração de Estrutura de Código
+## 🧠 Demonstração da Estrutura de Código
 
-Abaixo está o trecho principal do laço que executa o filtro multi-verificação sequencial e move cada arquivo individualmente:
+Abaixo está o trecho central do laço que executa o filtro sequencial e manipula cada arquivo individualmente:
 
 ```python
 for item in arquivos:
@@ -74,4 +94,7 @@ for item in arquivos:
 - [ ] Criar logs customizados no terminal utilizando códigos de cor ANSI estruturados para exibir relatórios dinâmicos pós-limpeza.
 
 ---
-Desenvolvido com 💻 e muita persistência por **Carlos Eduardo**.
+
+<p align="center">
+  Desenvolvido com 💻 e muita persistência por <strong>Carlos Eduardo</strong>
+</p>
