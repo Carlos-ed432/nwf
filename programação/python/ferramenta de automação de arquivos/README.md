@@ -1,78 +1,72 @@
 # 📁 Organizador Automático de Arquivos (Python)
 
-![Python Version](https://shields.io)
-![License: MIT](https://shields.io)
-![OS Compatibility](https://shields.io)
+Uma automação desenvolvida para organizar pastas do sistema operacional, como **Downloads** e **Imagens**. O script categoriza e move arquivos automaticamente para diretórios específicos de acordo com suas extensões, ignorando subpastas e funcionando em um menu interativo contínuo.
 
-Uma automação robusta desenvolvida para **dar fim à bagunça em pastas do sistema operacional** (como as pastas de *Downloads* ou *Imagens*). O script categoriza e move arquivos automaticamente para pastas específicas com base em suas extensões, tratando subdiretórios com segurança e rodando em um loop contínuo interativo.
-
-> 🧠 **Propósito do Projeto:** Este projeto foi construído do zero com o objetivo de consolidar conceitos práticos de manipulação do Sistema Operacional (OS), tratamento de fluxos sequenciais e controle de loops de repetição.
+> 🧠 **Propósito do projeto:** consolidar conceitos práticos de manipulação do sistema operacional, processamento sequencial de arquivos e controle de estruturas de repetição.
 
 ---
 
-## ✨ Funcionalidades Práticas
+## ✨ Funcionalidades
 
 | Recurso | Descrição |
 | :--- | :--- |
-| **Filtro Inteligente** | Permite mapear e validar múltiplos formatos de arquivos ao mesmo tempo utilizando buscas performáticas em listas. |
-| **Caminhos Dinâmicos** | Cria e gerencia os diretórios de destino de forma automática sem sobrescrever arquivos existentes ou gerar exceções redundantes (`exist_ok=True`). |
-| **Blindagem Contra Subpastas** | Identifica subdiretórios no meio do caminho, ignorando-os (`continue`) para focar exclusivamente na manipulação de arquivos reais. |
-| **Menu Interativo** | Estrutura de controle contínuo que permite ao usuário organizar múltiplas pastas em sequência sem precisar reiniciar o programa manualmente. |
+| **Filtro inteligente** | Mapeia e valida múltiplos formatos de arquivo por extensão. |
+| **Caminhos dinâmicos** | Cria e gerencia os diretórios de destino automaticamente, sem sobrescrever arquivos nem gerar exceções desnecessárias (`exist_ok=True`). |
+| **Proteção contra subpastas** | Identifica e ignora diretórios durante a varredura para manipular somente arquivos. |
+| **Menu interativo** | Permite organizar várias pastas em sequência sem reiniciar o programa. |
 
 ---
 
-## 🛠️ Tecnologias e Conceitos Utilizados
+## 🛠️ Tecnologias e conceitos utilizados
 
-O desenvolvimento deste script envolveu a aplicação direta de conceitos consolidados do ecossistema Python:
-
-*   **Biblioteca `os`:** Utilizada para mapeamento estrutural de diretórios (`os.listdir`), concatenação inteligente de caminhos de arquivos (`os.path.join`) e isolamento preciso de extensões (`os.path.splitext`).
-*   **Biblioteca `shutil`:** Aplicada na manipulação física e movimentação segura dos arquivos do sistema de origem para o destino.
-*   **Tratamento de Exceções (`try-except`):** Criação de fluxos de segurança para garantir a execução contínua do código mesmo diante de arquivos protegidos ou sem permissão de escrita.
-*   **Controle de Fluxo Complexo:** Uso combinado de laços finitos (`for` para varredura estática da pasta) e laços infinitos (`while True` para a persistência do menu interativo).
+- **Biblioteca `os`:** usada para listar diretórios (`os.listdir`), montar caminhos (`os.path.join`) e identificar extensões (`os.path.splitext`).
+- **Biblioteca `shutil`:** responsável por mover os arquivos com segurança entre a origem e o destino.
+- **Tratamento de exceções (`try`/`except`):** mantém o programa em execução mesmo diante de arquivos protegidos ou sem permissão de escrita.
+- **Controle de fluxo:** combina `for` para varrer arquivos e `while True` para manter o menu interativo ativo.
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como executar
 
 ### Pré-requisitos
 
-*   **Ambiente:** Python 3.10 ou superior instalado na máquina.
-*   **SO:** Compatível com ambientes Linux, Windows e macOS.
+- Python 3.10 ou superior.
+- Linux, Windows ou macOS.
 
-### Passo a Passo
+### Passo a passo
 
-1. **Clone este repositório para sua máquina local:**
+1. Clone o repositório:
+
    ```bash
-   git clone https://github.com
+   git clone <URL_DO_SEU_REPOSITORIO>
    ```
 
-2. **Navegue até o diretório do projeto:**
+2. Entre na pasta do projeto:
+
    ```bash
    cd nwf
    ```
 
-3. **Execute o script principal:**
+3. Execute o script principal:
+
    ```bash
    python osandshutil.py
    ```
 
-4. **Utilize a ferramenta:**
-   Insira o endereço do diretório que deseja limpar (ex: `/home/usuario/Downloads`), informe o nome da pasta de destino e assista à organização acontecer em tempo real!
+4. Informe o caminho da pasta que deseja organizar — por exemplo, `/home/usuario/Downloads` — e o nome da pasta de destino.
 
 ---
 
-## 🧠 Demonstração da Estrutura de Código
-
-Abaixo está o trecho central do laço que executa o filtro sequencial e manipula cada arquivo individualmente:
+## 🧠 Trecho central do código
 
 ```python
 for item in arquivos:
     caminhoarq = os.path.join(diretório, item)
-    
-    # Trava de segurança: ignora pastas para focar em arquivos de verdade
+
+    # Ignora subpastas e processa somente arquivos.
     if os.path.isdir(caminhoarq):
         continue
-        
+
     nomeaext, extensao = os.path.splitext(item)
     if extensao.lower() in ['.pdf', '.deb', '.webp', '.jpg', '.png']:
         shutil.move(caminhoarq, destino)
@@ -81,12 +75,12 @@ for item in arquivos:
 
 ---
 
-## 📝 Próximos Passos (Roadmap de Evolução)
+## 📝 Próximos passos
 
-- [ ] Implementar a conversão automática para minúsculas (`.lower()`) nas extensões para evitar que arquivos em caixa alta (ex: `.PDF`) escapem do filtro.
-- [ ] Adicionar um monitoramento de eventos em segundo plano para rodar a organização de forma 100% automatizada a cada X segundos.
-- [ ] Criar logs customizados no terminal utilizando códigos de cor ANSI estruturados para exibir relatórios dinâmicos pós-limpeza.
+- [x] Normalizar extensões com `.lower()` para que arquivos como `.PDF` também sejam reconhecidos.
+- [ ] Adicionar monitoramento em segundo plano para executar a organização automaticamente a cada intervalo definido.
+- [ ] Criar logs coloridos no terminal com relatórios após cada limpeza.
 
 ---
 
-Desenvolvido com 💻 e muita persistência por **Carlos Eduardo**
+Desenvolvido com 💻 e muita persistência por **Carlos Eduardo**.
